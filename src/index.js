@@ -3,10 +3,7 @@
 import './style.css';
 import html from './index.html';
 
-const body = document.querySelector('body');
-const para = document.createElement('p');
-para.textContent = 'OKAY';
-
-body.appendChild(para);
-
-para.style.color = 'red';
+// Set copyright year automatically
+const copyrightSpan = document.querySelector('#copyright-span');
+copyrightSpan.textContent = new Date().getFullYear();
+console.log(copyrightSpan);
