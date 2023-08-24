@@ -1,3 +1,122 @@
+:root {
+  /* Developer div */
+
+  --github-font-color: linear-gradient(
+    90deg,
+    rgba(214, 123, 3, 1) 10%,
+    rgba(214, 141, 3, 1) 20%,
+    rgba(249, 235, 22, 1) 30%,
+    rgba(109, 161, 65, 1) 40%,
+    rgba(56, 196, 152, 1) 50%,
+    rgba(30, 84, 190, 1) 60%,
+    rgba(149, 28, 204, 1) 70%,
+    rgba(201, 37, 137, 1) 80%,
+    rgba(219, 13, 83, 1) 90%,
+    rgba(255, 0, 0, 1) 100%
+  );
+
+  /* Dimensions */
+  --icon-height: 20px;
+  --icon-width: 20px;
+  --logo-height: 50px;
+  --logo-width: 50px;
+
+  /* Gaps */
+  --icon-icon-gap: 10px;
+  --icon-text-gap: 10px;
+
+  /* Font */
+  --font-white: rgba(240, 240, 240, 1);
+  --font-black: rgba(32, 33, 36, 1);
+}
+
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Inter', sans-serif;
+}
+
 html {
+  height: 100vh;
+  width: 100vw;
+}
+
+li {
+  list-style-type: none;
+}
+
+.header {
+  padding: 10px 20px;
   background-color: blue;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.logo {
+  display: flex;
+  align-items: center;
+  column-gap: var(--icon-text-gap);
+  color: var(--font-white);
+}
+
+.logo-icon {
+  height: var(--logo-height);
+  width: auto;
+}
+
+.settings-icon {
+  height: 20px;
+  width: auto;
+}
+
+#help {
+  display: flex;
+  column-gap: var(--icon-text-gap);
+  color: var(--font-white);
+  font-weight: 700;
+}
+
+/* Github link */
+
+.developer {
+  display: flex;
+  column-gap: 10px;
+  align-items: center;
+  margin-bottom: auto;
+}
+
+.copyright {
+  font-size: 0.85rem;
+  color: var(--font-white);
+}
+
+.para-author {
+  font-family: 'Caveat', 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  text-align: center;
+  color: var(--font-white);
+}
+
+.github-link {
+  font-family: 'Caveat', 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  position: relative;
+  background: var(--github-font-color);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.github-logo {
+  height: var(--icon-height);
+  width: auto;
+  position: absolute;
+  left: 62px;
+  opacity: 0.9;
+  transition: transform 0.4s ease-in-out;
+}
+
+.github-logo:hover {
+  transform: rotate(720deg);
 }
