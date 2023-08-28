@@ -1,6 +1,7 @@
 :root {
   /* Developer div */
-
+  --github-icon-height: 20px;
+  --github-icon-width: 20px;
   --github-font-color: linear-gradient(
     90deg,
     rgba(214, 123, 3, 1) 10%,
@@ -16,18 +17,23 @@
   );
 
   /* Dimensions */
-  --icon-height: 20px;
-  --icon-width: 20px;
+  --icon-height: 25px;
+  --icon-width: 25px;
   --logo-height: 50px;
   --logo-width: 50px;
 
   /* Gaps */
   --icon-icon-gap: 10px;
   --icon-text-gap: 10px;
+  --sidebar-row-gap: 0px;
+  --task-card-row-gap: 10px;
 
   /* Font */
   --font-white: rgba(240, 240, 240, 1);
   --font-black: rgba(32, 33, 36, 1);
+
+  /* Colors */
+  --border-color-main: rgba(0, 0, 0, 1);
 }
 
 *,
@@ -44,13 +50,21 @@ html {
   width: 100vw;
 }
 
+body {
+  height: 100%;
+}
+
 li {
   list-style-type: none;
 }
 
 .header {
   padding: 10px 20px;
-  background-color: blue;
+  background-image: url('./assets/img/header.jpg');
+  background-size: cover;
+  background-attachment: fixed;
+  background-position: center;
+  background-repeat: no-repeat;
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -68,16 +82,67 @@ li {
   width: auto;
 }
 
-.settings-icon {
-  height: 20px;
+.main {
+  display: grid;
+  grid-template-columns: 1fr 4fr;
+}
+
+.sidebar {
+  grid-column: 1 / 2;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  margin-top: 50px;
+}
+
+.sidebar-item {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  column-gap: var(--icon-text-gap);
+  padding: 10px 15px 10px 15px;
+}
+
+.task-count {
+  margin-left: auto;
+}
+
+.separation {
+  height: 1px;
+  background-color: var(--border-color-main);
+  margin: 5px 15px 5px 15px;
+}
+
+.sidebar-settings {
+  display: flex;
+  flex-direction: column;
+  align-items: start;
+}
+
+.sidebar-icon {
+  height: var(--icon-height);
   width: auto;
 }
 
-#help {
-  display: flex;
-  column-gap: var(--icon-text-gap);
-  color: var(--font-white);
-  font-weight: 700;
+.span-plus {
+}
+
+input[type='text'],
+input[type='date'],
+button,
+textarea {
+  appearance: none;
+  border: none;
+  outline: none;
+}
+
+#add-project {
+  font-size: 1rem;
+}
+
+.task-container {
+  grid-column: 2 / -1;
+  margin-top: 50px;
 }
 
 /* Github link */
@@ -86,17 +151,12 @@ li {
   display: flex;
   column-gap: 10px;
   align-items: center;
-  margin-bottom: auto;
+  margin-right: auto;
+  margin-left: auto;
 }
 
 .copyright {
   font-size: 0.85rem;
-  color: var(--font-white);
-}
-
-.para-author {
-  font-family: 'Caveat', 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-  text-align: center;
   color: var(--font-white);
 }
 
@@ -109,10 +169,10 @@ li {
 }
 
 .github-logo {
-  height: var(--icon-height);
+  height: var(--github-icon-height);
   width: auto;
   position: absolute;
-  left: 62px;
+  left: 65px;
   opacity: 0.9;
   transition: transform 0.4s ease-in-out;
 }
