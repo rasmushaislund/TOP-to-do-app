@@ -35,6 +35,21 @@
     </div>
     <div class="main">
       <div class="sidebar">
+        <div class="info">
+          <p class="day">Monday 3th June</p>
+          <div class="weather">
+            <img
+              class="sidebar-icon"
+              id="weather-icon"
+              src="./assets/img/circle-outline.svg"
+              alt="weather icon"
+            />
+            <div class="temperature">
+              <p class="temperature-value">23</p>
+              <p class="temperature-unit"><sup> &deg</sup>C</p>
+            </div>
+          </div>
+        </div>
         <div class="sidebar-top">
           <div class="sidebar-item">
             <img
@@ -64,7 +79,7 @@
             <p class="standard-text">Projects</p>
             <p class="standard-text task-count">6</p>
           </div>
-          <div class="sidebar-item">
+          <div class="sidebar-item" id="sidebar-item-add">
             <img
               class="sidebar-icon"
               src="./assets/img/plus-thick.svg"
@@ -99,7 +114,19 @@
         </div>
       </div>
       <div class="task-container">
-        <h1>Some text here</h1>
+        <div class="task-header">
+          <img
+            class="task-header-icon"
+            src="./assets/img/bullet-list.svg"
+            alt="icon for project header in task section"
+          />
+          <h2 class="header-project-name">Projects</h2>
+          <img
+            class="task-header-icon hoverable-icon" 
+            id="three-dots-icon"
+            src="./assets/img/dots-horizontal.svg"
+            alt="dots icon for expanding controls"
+          />
       </div>
     </div>
   </body>
