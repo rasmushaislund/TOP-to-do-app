@@ -21,8 +21,6 @@
       </div>
       <div class="developer">
         <p class="copyright">&copy<span id="copyright-span"> 2023</span></p>
-        <!-- <p class="para-author">
-          Created by -->
         <a
           class="github-link"
           href="https://github.com/rasmushaislund"
@@ -33,18 +31,102 @@
             class="github-logo"
             alt="github logo"
         /></a>
-        <!-- </p> -->
       </div>
-      <div class="settings">
-        <ul class="settings-list">
-          <li class="settings-item" id="help">
+    </div>
+    <div class="main">
+      <div class="sidebar">
+        <div class="info">
+          <p class="day">Monday 3th June</p>
+          <div class="weather">
             <img
-              class="settings-icon"
-              src="assets/img/support-white.20095ae09ec9b7e21703.svg"
-              alt="help icon"
-            />Help
-          </li>
-        </ul>
+              class="sidebar-icon"
+              id="weather-icon"
+              src="assets/img/circle-outline.e3b6ef0fc8b1ecd5d1a9.svg"
+              alt="weather icon"
+            />
+            <div class="temperature">
+              <p class="temperature-value">23</p>
+              <p class="temperature-unit"><sup> &deg</sup>C</p>
+            </div>
+          </div>
+        </div>
+        <div class="sidebar-top">
+          <div class="sidebar-item">
+            <img
+              class="sidebar-icon"
+              src="assets/img/calender.3faae0cf01e4ecd160ef.svg"
+              alt="calender"
+            />
+            <p class="standard-text">Today</p>
+            <p class="standard-text task-count">3</p>
+          </div>
+          <div class="sidebar-item">
+            <img
+              class="sidebar-icon"
+              src="assets/img/star-outline.c2e6e6dd118d33c26922.svg"
+              alt="important"
+            />
+            <p class="standard-text">Important</p>
+            <p class="standard-text task-count">1</p>
+          </div>
+          <div class="separation"></div>
+          <div class="sidebar-item">
+            <img
+              class="sidebar-icon"
+              src="assets/img/bullet-list.365f3e7f182c9f913994.svg"
+              alt="bullet list"
+            />
+            <p class="standard-text">Projects</p>
+            <p class="standard-text task-count">6</p>
+          </div>
+          <div class="sidebar-item" id="sidebar-item-add">
+            <img
+              class="sidebar-icon"
+              src="assets/img/plus-thick.469e7f772cffd2e91e89.svg"
+              alt="plus operator"
+            />
+            <input
+              type="text"
+              id="add-project"
+              name="add-project"
+              maxlength="150"
+              placeholder="Add new project"
+            />
+          </div>
+        </div>
+        <div class="sidebar-settings">
+          <div class="sidebar-item">
+            <img
+              class="sidebar-icon"
+              src="assets/img/settings.57d3ca9af2612ee72754.svg"
+              alt="settings"
+            />
+            <p class="standard-text">Settings</p>
+          </div>
+          <div class="sidebar-item">
+            <img
+              class="sidebar-icon"
+              src="assets/img/support.b34445be5676b112619b.svg"
+              alt="help"
+            />
+            <p class="standard-text">Help</p>
+          </div>
+        </div>
+      </div>
+      <div class="task-container">
+        <div class="task-header">
+          <img
+            class="task-header-icon"
+            src="assets/img/bullet-list.365f3e7f182c9f913994.svg"
+            alt="icon for project header in task section"
+          />
+          <h2 class="header-project-name">Projects</h2>
+          <img
+            class="task-header-icon hoverable-icon" 
+            id="three-dots-icon"
+            src="assets/img/dots-horizontal.469afb7a3c40cc9d6606.svg"
+            alt="dots icon for expanding controls"
+          />
       </div>
     </div>
   </body>
