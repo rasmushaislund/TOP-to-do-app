@@ -122,11 +122,105 @@
           />
           <h2 class="header-project-name">Projects</h2>
           <img
-            class="task-header-icon hoverable-icon" 
+            class="task-header-icon hoverable"
             id="three-dots-icon"
             src="./assets/img/dots-horizontal.svg"
             alt="dots icon for expanding controls"
           />
+        </div>
+        <div class="new-task">
+          <ul>
+            <li>
+              <input
+                type="text"
+                class="task-title"
+                placeholder="Add a task title"
+                name="task_title"
+                maxlength="150"
+              />
+            </li>
+            <li class="task-deadline">
+              <img
+                class="task-icon hoverable"
+                src="./assets/img/calendar-clock.svg"
+                alt="calender icon for choosing task deadline"
+              />
+              <p class="deadline-para"></p>
+              <input class="deadline" type="date" name="deadline" />
+            </li>
+            <li>
+              <textarea
+                rows="1"
+                maxlength="400"
+                placeholder="Add description here..."
+                wrap="soft"
+              ></textarea>
+            </li>
+          </ul>
+          <div class="add-task">
+            <button id="add-task-btn" type="button">+ Add</button>
+          </div>
+        </div>
+        <div class="separation"></div>
+        <div class="task-list">
+          <div class="task-item">
+            <input class="checkbox" id="task-checkbox" type="checkbox" />
+            <div class="task-section">
+              <ul>
+                <li>
+                  <input
+                    type="text"
+                    class="task-title"
+                    placeholder="Add a task title"
+                    name="task_title"
+                    maxlength="150"
+                    readonly
+                  />
+                </li>
+                <li class="task-deadline">
+                  <img
+                    class="task-icon hoverable"
+                    src="./assets/img/calendar-clock.svg"
+                    alt="calender icon for choosing task deadline"
+                  />
+                  <p class="deadline-para"></p>
+                  <input
+                    class="deadline"
+                    type="date"
+                    name="deadline"
+                    readonly
+                  />
+                </li>
+                <li>
+                  <textarea
+                    rows="1"
+                    maxlength="400"
+                    placeholder="Add description here..."
+                    wrap="soft"
+                    readonly
+                  ></textarea>
+                </li>
+              </ul>
+              <div class="task-actions">
+                <img
+                  class="task-icon hoverable"
+                  src="./assets/img/edit-outline.svg"
+                  alt="edit task icon"
+                />
+                <img
+                  class="task-icon hoverable"
+                  src="./assets/img/star-outline.svg"
+                  alt="add to important category icon"
+                />
+                <img
+                  class="task-icon hoverable"
+                  src="./assets/img/delete.svg"
+                  alt="delete task icon"
+                />
+              </div>
+            </div>
+          </div>
+        </div>
       </div>
     </div>
   </body>
