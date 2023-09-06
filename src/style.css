@@ -19,19 +19,27 @@
   /* Dimensions */
   --icon-height: 25px;
   --icon-width: 25px;
+  --task-icon-height: 30px;
+  --task-icon-width: 30px;
   --logo-height: 50px;
   --logo-width: 50px;
   --header-height: 70px;
   --icon-header-task-section-height: 35px;
+  --task-card-height: 130px;
 
   /* Gaps */
   --icon-icon-gap: 10px;
   --icon-text-gap: 15px;
+  --text-text-gap: 5px;
   --sidebar-row-gap: 0px;
   --task-card-row-gap: 10px;
 
   /* Border */
   --icon-hover-border-radius: 10px;
+  --task-border-radius: 10px;
+
+  /* Shadow */
+  --task-item-shadow: 0 0 5px 1px rgb(161, 165, 167);
 
   /* Font */
   --font-white: rgba(240, 240, 240, 1);
@@ -40,9 +48,13 @@
   /* Colors */
   --border-color-main: rgb(200, 200, 200);
   --hover-color-grey: rgb(226, 226, 226);
+  --background-color-white: rgba(255, 255, 255, 1);
+  --input-focus-color: rgba(240, 240, 240, 1);
 
   /* Box-model */
   --general-padding: 10px 20px 10px 20px;
+  --input-padding: 5px 10px;
+  --task-icon-padding: 3px;
 }
 
 *,
@@ -60,6 +72,38 @@ html {
 }
 
 body {
+}
+
+input[type='text'],
+input[type='date'],
+button,
+textarea {
+  appearance: none;
+  border: none;
+  outline: none;
+}
+
+li {
+  list-style-type: none;
+}
+
+textarea {
+  resize: none;
+  width: 300px;
+  font-size: 1rem;
+  /* background-color: var(--font-white); */
+  padding: var(--input-padding);
+  border-radius: var(--task-border-radius);
+  border: 1px solid transparent;
+  width: 100%;
+}
+
+textarea:hover:not(:focus) {
+  border: 1px solid var(--border-color-main);
+}
+
+textarea:focus {
+  background-color: var(--input-focus-color);
 }
 
 .header {
@@ -169,13 +213,10 @@ body {
   width: auto;
 }
 
-input[type='text'],
-input[type='date'],
-button,
-textarea {
-  appearance: none;
-  border: none;
-  outline: none;
+.task-icon {
+  height: var(--task-icon-height);
+  width: auto;
+  padding: var(--task-icon-padding);
 }
 
 #add-project {
@@ -204,10 +245,141 @@ textarea {
   width: auto;
 }
 
-.hoverable-icon:hover {
+.new-task {
+  display: flex;
+  justify-content: space-between;
+  column-gap: var(--icon-text-gap);
+  background-color: var(--background-color-white);
+  border-radius: var(--task-border-radius);
+  padding: 10px 20px 10px 20px;
+  margin-top: 10px;
+  height: var(--task-card-height);
+  box-shadow: var(--task-item-shadow);
+}
+
+.new-task ul,
+.task-section ul {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  /* row-gap: var(--text-text-gap); */
+  width: 80%;
+}
+
+input.task-title {
+  font-size: 1rem;
+  font-weight: 700;
+  padding: var(--input-padding);
+  border: 1px solid transparent;
+  border-radius: var(--task-border-radius);
+  width: 100%;
+}
+
+.task-title:hover:not(:focus) {
+  border: 1px solid var(--border-color-main);
+}
+
+.task-title:focus {
+  background-color: var(--input-focus-color);
+}
+
+li.task-deadline {
+  display: flex;
+  align-items: center;
+  column-gap: var(--icon-text-gap);
+  padding: var(--input-padding);
+  border-radius: var(--task-border-radius);
+  width: 100%;
+}
+
+.deadline {
+  display: none;
+}
+
+#add-task-btn {
+  padding: var(--input-padding);
+  background-color: inherit;
+  border: 1px solid var(--font-black);
+}
+
+#add-task-btn:hover {
+  background-color: var(--input-focus-color);
+  cursor: pointer;
+}
+
+.task-list {
+  display: grid;
+  grid-template-rows: repeat(auto-fill, var(--task-card-height));
+  row-gap: var(--icon-icon-gap);
+}
+
+.task-item {
+  display: flex;
+  align-items: center;
+  column-gap: var(--icon-text-gap);
+  background-color: var(--background-color-white);
+  border-radius: var(--task-border-radius);
+  padding: 10px 20px 10px 20px;
+  height: var(--task-card-height);
+  box-shadow: var(--task-item-shadow);
+}
+
+.task-section {
+  display: flex;
+  justify-content: space-between;
+  column-gap: var(--icon-text-gap);
+  width: 100%;
+}
+
+.task-actions {
+  display: flex;
+  column-gap: var(--icon-icon-gap);
+}
+
+.hoverable:hover {
   cursor: pointer;
   border-radius: var(--icon-hover-border-radius);
   background-color: var(--hover-color-grey);
+}
+
+/* Checkbox styling */
+
+input[type='checkbox'] {
+  -webkit-appearance: none;
+  appearance: none;
+  background-color: #fff;
+  margin: 0;
+  font: inherit;
+  height: var(--icon-height);
+  width: var(--icon-width);
+  border: 1px solid var(--border-color-main);
+  border-radius: 50px;
+  /* transform: translateY(-0.075em); */
+  display: grid;
+  place-content: center;
+}
+
+input[type='checkbox']::before {
+  content: '';
+  width: 12px;
+  height: 12px;
+  transform: scale(0);
+  transition: 120ms transform ease-in-out;
+  box-shadow: inset 1em 1em var(--background-color-white);
+  transform-origin: bottom left;
+  clip-path: polygon(14% 44%, 0 65%, 50% 100%, 100% 16%, 80% 0%, 43% 62%);
+}
+
+input[type='checkbox']:checked {
+  background-color: rgb(36, 100, 220);
+}
+
+input[type='checkbox']:checked::before {
+  transform: scale(1);
+}
+
+input[type='checkbox']:hover {
+  border-color: inherit;
 }
 
 /* Github link */
