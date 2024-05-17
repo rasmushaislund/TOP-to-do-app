@@ -17,8 +17,8 @@
   );
 
   /* Dimensions */
-  --icon-height: 25px;
-  --icon-width: 25px;
+  --icon-height: 30px;
+  --icon-width: 30px;
   --task-icon-height: 30px;
   --task-icon-width: 30px;
   --logo-height: 50px;
@@ -371,7 +371,7 @@ input[type='checkbox']::before {
 }
 
 input[type='checkbox']:checked {
-  background-color: rgb(36, 100, 220);
+  background-color: rgb(27, 147, 147);
 }
 
 input[type='checkbox']:checked::before {
