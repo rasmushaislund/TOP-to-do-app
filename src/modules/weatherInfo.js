@@ -3,7 +3,7 @@ import { format } from 'date-fns';
 // Show today's date with formatting
 export function showDay() {
   const today = document.querySelector('.day');
-  const thisDay = format(new Date(), 'EEEE io MMMM');
+  const thisDay = format(new Date(), 'EEE io MMMM');
 
   today.textContent = thisDay;
 }
@@ -19,7 +19,6 @@ export async function fetchWeather() {
     const response = await fetch(urlCurrent, { mode: 'cors' });
     if (!response.ok) throw new Error();
     const toJSON = await response.json();
-    console.log(toJSON);
     return toJSON;
   } catch (error) {
     showError();
