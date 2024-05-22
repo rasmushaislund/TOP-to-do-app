@@ -57,7 +57,7 @@
               src="./assets/img/calender.svg"
               alt="calender"
             />
-            <p class="standard-text">Today</p>
+            <p class="standard-text item-text">Today</p>
             <p class="standard-text task-count">1</p>
           </div>
           <div class="sidebar-item">
@@ -66,7 +66,7 @@
               src="./assets/img/star-outline.svg"
               alt="important"
             />
-            <p class="standard-text">Important</p>
+            <p class="standard-text item-text">Important</p>
             <p class="standard-text task-count">1</p>
           </div>
           <div class="separation"></div>
@@ -76,7 +76,7 @@
               src="./assets/img/bullet-list.svg"
               alt="bullet list"
             />
-            <p class="standard-text">Projects</p>
+            <p class="standard-text item-text">Projects</p>
             <p class="standard-text task-count">6</p>
           </div>
           <div class="sidebar-item" id="sidebar-item-add">
@@ -101,7 +101,7 @@
               src="./assets/img/settings.svg"
               alt="settings"
             />
-            <p class="standard-text">Settings</p>
+            <p class="standard-text item-text">Settings</p>
           </div>
           <div class="sidebar-item">
             <img
@@ -109,7 +109,7 @@
               src="./assets/img/support.svg"
               alt="help"
             />
-            <p class="standard-text">Help</p>
+            <p class="standard-text item-text">Help</p>
           </div>
         </div>
       </div>
@@ -121,12 +121,20 @@
             alt="icon for project header in task section"
           />
           <h2 class="header-project-name">Projects</h2>
-          <img
-            class="task-header-icon hoverable"
-            id="three-dots-icon"
-            src="./assets/img/dots-horizontal.svg"
-            alt="dots icon for expanding controls"
-          />
+          <div class="three-dots-container">
+            <button class="three-dots-btn hoverable">
+              <img
+                class="task-header-icon"
+                id="three-dots-icon"
+                src="./assets/img/dots-horizontal.svg"
+                alt="dots icon for expanding controls"
+              />
+            </button>
+            <div class="dropdown">
+              <a href="#Rename">Rename</a>
+              <a href="#Delete">Delete</a>
+            </div>
+          </div>
         </div>
         <div class="new-task">
           <ul>
