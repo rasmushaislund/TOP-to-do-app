@@ -37,6 +37,7 @@
   /* Border */
   --icon-hover-border-radius: 10px;
   --task-border-radius: 10px;
+  --drop-down-border-radius: 5px;
 
   /* Shadow */
   --task-item-shadow: 0 0 5px 1px rgb(161, 165, 167);
@@ -243,6 +244,54 @@ textarea:focus {
 .task-header-icon {
   height: var(--icon-header-task-section-height);
   width: auto;
+  vertical-align: middle;
+}
+
+.three-dots-btn {
+  /* background-color: white;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  column-gap: var(--gap);
+  padding: 0.6rem;
+  cursor: pointer;
+  border-radius: var(--radius);
+  border: none;
+  box-shadow: var(--shadow); */
+  position: relative;
+}
+
+.dropdown {
+  position: absolute;
+  max-width: 250px;
+  min-width: fit-content;
+  box-shadow: var(--task-item-shadow);
+  border-radius: var(--drop-down-border-radius);
+  margin-top: 5px;
+  background: var(--background-color-white);
+  visibility: hidden;
+  opacity: 0;
+  transition: all 0.2s cubic-bezier(0.16, 1, 0.5, 1);
+  transform: translateY(20px);
+}
+
+.show {
+  transform: translateY(0px);
+  visibility: visible;
+  opacity: 1;
+}
+
+.dropdown a {
+  display: flex;
+  align-items: start;
+  padding: var(--general-padding);
+  padding-right: 50px;
+  text-decoration: none;
+  color: var(--font-black);
+}
+
+.dropdown a:hover {
+  background-color: var(--hover-color-grey);
 }
 
 .new-task {
