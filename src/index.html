@@ -51,7 +51,7 @@
           </div>
         </div>
         <div class="sidebar-top">
-          <div class="sidebar-item">
+          <div class="sidebar-item selectable-item fixed-item">
             <img
               class="sidebar-icon"
               src="./assets/img/calender.svg"
@@ -60,7 +60,7 @@
             <p class="standard-text item-text">Today</p>
             <p class="standard-text task-count">1</p>
           </div>
-          <div class="sidebar-item">
+          <div class="sidebar-item selectable-item fixed-item">
             <img
               class="sidebar-icon"
               src="./assets/img/star-outline.svg"
@@ -70,7 +70,7 @@
             <p class="standard-text task-count">1</p>
           </div>
           <div class="separation"></div>
-          <div class="sidebar-item">
+          <div class="sidebar-item selectable-item">
             <img
               class="sidebar-icon"
               src="./assets/img/bullet-list.svg"
@@ -201,6 +201,8 @@
                 </li>
                 <li>
                   <textarea
+                    id="expand-collapse"
+                    class="expandable-textarea"
                     rows="1"
                     maxlength="400"
                     placeholder="Add description here..."
@@ -208,6 +210,13 @@
                     readonly
                   ></textarea>
                 </li>
+                <button id="expand-collapse-btn" class="expand-btn">
+                  <img
+                    class="expand-icon"
+                    src="./assets/img/expand.svg"
+                    alt="expand-collapse"
+                  /><span>Show more</span>
+                </button>
               </ul>
               <div class="task-actions">
                 <img
