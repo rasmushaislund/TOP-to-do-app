@@ -51,6 +51,7 @@
   --hover-color-grey: rgb(226, 226, 226);
   --background-color-white: rgba(255, 255, 255, 1);
   --input-focus-color: rgba(240, 240, 240, 1);
+  --expand-collapse-color: #4b77d1;
 
   /* Box-model */
   --general-padding: 10px 20px 10px 20px;
@@ -248,16 +249,6 @@ textarea:focus {
 }
 
 .three-dots-btn {
-  /* background-color: white;
-  display: flex;
-  align-items: center;
-  justify-content: flex-start;
-  column-gap: var(--gap);
-  padding: 0.6rem;
-  cursor: pointer;
-  border-radius: var(--radius);
-  border: none;
-  box-shadow: var(--shadow); */
   position: relative;
 }
 
@@ -369,7 +360,7 @@ li.task-deadline {
   background-color: var(--background-color-white);
   border-radius: var(--task-border-radius);
   padding: 10px 20px 10px 20px;
-  height: var(--task-card-height);
+  height: fit-content;
   box-shadow: var(--task-item-shadow);
 }
 
@@ -378,6 +369,41 @@ li.task-deadline {
   justify-content: space-between;
   column-gap: var(--icon-text-gap);
   width: 100%;
+}
+
+#expand-collapse {
+  transition: all 200ms;
+}
+
+.expandable-textarea {
+  display: none;
+}
+
+.collapsable-textarea {
+  display: block;
+  transition-behavior: allow-discrete;
+}
+
+.expand-btn,
+.collapse-btn {
+  padding: var(--input-padding);
+  background-color: inherit;
+  color: var(--expand-collapse-color);
+  text-align: start;
+  display: flex;
+  align-items: center;
+  vertical-align: middle;
+  gap: 5px;
+  cursor: pointer;
+  width: fit-content;
+}
+
+.expand-icon {
+  transition: transform 0.3s ease-in;
+}
+
+.collapse-btn > img {
+  transform: rotate(180deg);
 }
 
 .task-actions {
@@ -389,6 +415,10 @@ li.task-deadline {
   cursor: pointer;
   border-radius: var(--icon-hover-border-radius);
   background-color: var(--hover-color-grey);
+}
+
+.hide {
+  display: none;
 }
 
 /* Checkbox styling */
