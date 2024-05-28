@@ -6,6 +6,7 @@ import { showDay } from './modules/weatherInfo';
 import { fetchWeather, showWeather } from './modules/weatherInfo';
 import toggleDropdown from './modules/editProject';
 import { selectProject } from './modules/selectProject';
+import { expandCollapse } from './modules/taskCard';
 
 // Set copyright year automatically
 const copyrightSpan = document.querySelector('#copyright-span');
@@ -40,4 +41,12 @@ sidebarItem.forEach((item) => {
   item.addEventListener('click', (e) => {
     selectProject(e);
   });
+});
+
+// Task card
+// Expand/collapse content
+const expandCollapseBtn = document.querySelector('#expand-collapse-btn');
+
+expandCollapseBtn.addEventListener('click', () => {
+  expandCollapse();
 });
