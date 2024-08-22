@@ -3,7 +3,7 @@ import { format } from 'date-fns';
 // Show today's date with formatting
 export function showDay() {
   const today = document.querySelector('.day');
-  const thisDay = format(new Date(), 'EEE io MMMM');
+  const thisDay = format(new Date(), 'EEEE io MMMM');
 
   today.textContent = thisDay;
 }
