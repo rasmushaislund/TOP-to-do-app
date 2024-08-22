@@ -32,7 +32,7 @@ export function showWeather(data) {
   const temp = document.querySelector('.temperature-value');
 
   weatherIcon.src = data.current.condition.icon;
-  temp.textContent = data.current.temp_c;
+  temp.textContent = Math.round(data.current.temp_c);
 }
 
 function showError() {
