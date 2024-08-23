@@ -3,7 +3,7 @@ import { format } from 'date-fns';
 // Show today's date with formatting
 export function showDay() {
   const today = document.querySelector('.day');
-  const thisDay = format(new Date(), 'EEE io MMMM');
+  const thisDay = format(new Date(), 'EEEE io MMMM');
 
   today.textContent = thisDay;
 }
@@ -33,7 +33,7 @@ export function showWeather(data) {
   const temp = document.querySelector('.temperature-value');
 
   weatherIcon.src = data.current.condition.icon;
-  temp.textContent = data.current.temp_c;
+  temp.textContent = Math.round(data.current.temp_c);
 }
 
 function showError() {
