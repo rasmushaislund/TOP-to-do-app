@@ -51,40 +51,43 @@
           </div>
         </div>
         <div class="sidebar-top">
-          <div class="sidebar-item">
+          <div class="sidebar-item selectable-item fixed-item">
             <img
               class="sidebar-icon"
               src="assets/img/calender.3faae0cf01e4ecd160ef.svg"
               alt="calender"
             />
-            <p class="standard-text">Today</p>
+            <p class="standard-text item-text">Today</p>
             <p class="standard-text task-count">1</p>
           </div>
-          <div class="sidebar-item">
+          <div class="sidebar-item selectable-item fixed-item">
             <img
               class="sidebar-icon"
               src="assets/img/star-outline.c2e6e6dd118d33c26922.svg"
               alt="important"
             />
-            <p class="standard-text">Important</p>
+            <p class="standard-text item-text">Important</p>
             <p class="standard-text task-count">1</p>
           </div>
-          <div class="separation"></div>
-          <div class="sidebar-item">
+          <div class="sidebar-item selectable-item fixed-item">
             <img
               class="sidebar-icon"
               src="assets/img/bullet-list.365f3e7f182c9f913994.svg"
               alt="bullet list"
             />
-            <p class="standard-text">Projects</p>
+            <p class="standard-text item-text">Overview</p>
             <p class="standard-text task-count">6</p>
           </div>
+          <div class="separation"></div>
+
           <div class="sidebar-item" id="sidebar-item-add">
-            <img
-              class="sidebar-icon"
-              src="assets/img/plus-thick.469e7f772cffd2e91e89.svg"
-              alt="plus operator"
-            />
+            <button class="hoverable" id="add-project-btn" type="button">
+              <img
+                class="sidebar-icon"
+                src="assets/img/plus-thick.469e7f772cffd2e91e89.svg"
+                alt="plus operator"
+              />
+            </button>
             <input
               type="text"
               id="add-project"
@@ -101,7 +104,7 @@
               src="assets/img/settings.57d3ca9af2612ee72754.svg"
               alt="settings"
             />
-            <p class="standard-text">Settings</p>
+            <p class="standard-text item-text">Settings</p>
           </div>
           <div class="sidebar-item">
             <img
@@ -109,7 +112,7 @@
               src="assets/img/support.b34445be5676b112619b.svg"
               alt="help"
             />
-            <p class="standard-text">Help</p>
+            <p class="standard-text item-text">Help</p>
           </div>
         </div>
       </div>
@@ -121,12 +124,20 @@
             alt="icon for project header in task section"
           />
           <h2 class="header-project-name">Projects</h2>
-          <img
-            class="task-header-icon hoverable"
-            id="three-dots-icon"
-            src="assets/img/dots-horizontal.469afb7a3c40cc9d6606.svg"
-            alt="dots icon for expanding controls"
-          />
+          <div class="three-dots-container">
+            <button class="three-dots-btn hoverable">
+              <img
+                class="task-header-icon"
+                id="three-dots-icon"
+                src="assets/img/dots-horizontal.469afb7a3c40cc9d6606.svg"
+                alt="dots icon for expanding controls"
+              />
+            </button>
+            <div class="dropdown">
+              <a href="#Rename">Rename</a>
+              <a href="#Delete">Delete</a>
+            </div>
+          </div>
         </div>
         <div class="new-task">
           <ul>
@@ -145,11 +156,12 @@
                 src="assets/img/calendar-clock.1ce096c9a885c1da5600.svg"
                 alt="calender icon for choosing task deadline"
               />
-              <p class="deadline-para"></p>
+              <p class="deadline-para">20-05-1988</p>
               <input class="deadline" type="date" name="deadline" />
             </li>
             <li>
               <textarea
+                class="task-description"
                 rows="1"
                 maxlength="400"
                 placeholder="Add description here..."
@@ -193,6 +205,8 @@
                 </li>
                 <li>
                   <textarea
+                    id="expand-collapse"
+                    class="expandable-textarea"
                     rows="1"
                     maxlength="400"
                     placeholder="Add description here..."
@@ -200,6 +214,13 @@
                     readonly
                   ></textarea>
                 </li>
+                <button id="expand-collapse-btn" class="expand-btn">
+                  <img
+                    class="expand-icon"
+                    src="assets/img/expand.967319c4350d644487ec.svg"
+                    alt="expand-collapse"
+                  /><span>Show more</span>
+                </button>
               </ul>
               <div class="task-actions">
                 <img
