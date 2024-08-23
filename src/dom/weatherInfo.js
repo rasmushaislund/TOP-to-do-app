@@ -19,6 +19,7 @@ export async function fetchWeather() {
     const response = await fetch(urlCurrent, { mode: 'cors' });
     if (!response.ok) throw new Error();
     const toJSON = await response.json();
+    console.log(toJSON);
     return toJSON;
   } catch (error) {
     showError();
