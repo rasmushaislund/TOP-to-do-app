@@ -69,22 +69,25 @@
             <p class="standard-text item-text">Important</p>
             <p class="standard-text task-count">1</p>
           </div>
-          <div class="separation"></div>
-          <div class="sidebar-item selectable-item">
+          <div class="sidebar-item selectable-item fixed-item">
             <img
               class="sidebar-icon"
               src="./assets/img/bullet-list.svg"
               alt="bullet list"
             />
-            <p class="standard-text item-text">Projects</p>
+            <p class="standard-text item-text">Overview</p>
             <p class="standard-text task-count">6</p>
           </div>
+          <div class="separation"></div>
+
           <div class="sidebar-item" id="sidebar-item-add">
-            <img
-              class="sidebar-icon"
-              src="./assets/img/plus-thick.svg"
-              alt="plus operator"
-            />
+            <button class="hoverable" id="add-project-btn" type="button">
+              <img
+                class="sidebar-icon"
+                src="./assets/img/plus-thick.svg"
+                alt="plus operator"
+              />
+            </button>
             <input
               type="text"
               id="add-project"
@@ -153,11 +156,12 @@
                 src="./assets/img/calendar-clock.svg"
                 alt="calender icon for choosing task deadline"
               />
-              <p class="deadline-para"></p>
+              <p class="deadline-para">20-05-1988</p>
               <input class="deadline" type="date" name="deadline" />
             </li>
             <li>
               <textarea
+                class="task-description"
                 rows="1"
                 maxlength="400"
                 placeholder="Add description here..."
