@@ -48,7 +48,8 @@
 
   /* Colors */
   --border-color-main: rgb(200, 200, 200);
-  --hover-color-grey: rgb(226, 226, 226);
+  --hover-color: rgb(226, 226, 226);
+  --focus-color: rgb(208, 250, 240);
   --background-color-white: rgba(255, 255, 255, 1);
   --input-focus-color: rgba(240, 240, 240, 1);
   --expand-collapse-color: #4b77d1;
@@ -83,6 +84,7 @@ textarea {
   appearance: none;
   border: none;
   outline: none;
+  background-color: inherit;
 }
 
 li {
@@ -106,6 +108,10 @@ textarea:hover:not(:focus) {
 
 textarea:focus {
   background-color: var(--input-focus-color);
+}
+
+button > img {
+  vertical-align: middle;
 }
 
 .header {
@@ -144,6 +150,7 @@ textarea:focus {
   display: flex;
   flex-direction: column;
   justify-content: start;
+  min-width: 350px;
   border-right: 1px solid var(--border-color-main);
 }
 
@@ -175,14 +182,22 @@ textarea:focus {
   padding: var(--general-padding);
 }
 
-.sidebar-item:hover {
-  background-color: var(--hover-color-grey);
+.sidebar-item:not(.sidebar-focus):hover {
+  background-color: var(--hover-color);
   cursor: pointer;
 }
 
 #sidebar-item-add:hover {
   background-color: inherit;
   cursor: inherit;
+}
+
+/* .sidebar-item:active {
+  background-color: var(--hover-color);
+} */
+
+#add-project:enabled:hover {
+  border: 1px solid var(--hover-color);
 }
 
 #add-project::placeholder {
@@ -282,7 +297,7 @@ textarea:focus {
 }
 
 .dropdown a:hover {
-  background-color: var(--hover-color-grey);
+  background-color: var(--hover-color);
 }
 
 .new-task {
@@ -414,11 +429,15 @@ li.task-deadline {
 .hoverable:hover {
   cursor: pointer;
   border-radius: var(--icon-hover-border-radius);
-  background-color: var(--hover-color-grey);
+  background-color: var(--hover-color);
 }
 
 .hide {
   display: none;
+}
+
+.sidebar-focus:not(#sidebar-item-add) {
+  background-color: var(--focus-color);
 }
 
 /* Checkbox styling */
